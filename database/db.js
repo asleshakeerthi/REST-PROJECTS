@@ -1,12 +1,10 @@
 var mongoose = require("mongoose")
 async function connectToDatabase() {
     try{
-        await mongoose.connect("mongodb+srv://harshitharcp09:harshitharcp09@cluster2.antx24r.mongodb.net/")
-        console.log("connected")
-
+        await mongoose.connect("mongodb+srv://aslesha:aslesha@project2.nrrko6k.mongodb.net/")
+        console.log("connected to the database")
     }catch(error){
         console.log("error",error);
-    
 }
 }
 module.exports = connectToDatabase

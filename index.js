@@ -1,13 +1,15 @@
 require ("dotenv").config()
 var express = require("express")
+var cors=require("cors")
 var connectToDatabase = require("./database/db")
 var bookRoute = require("./routes/book-routes")
-connectToDatabase()
+// connectToDatabase()
 var app = express()
+connectToDatabase()
 app.use(express.json())
-app.use("api/books",bookRoute)
-
-var PORT = process.env.PORT||9000
+app.use(cors())
+app.use("/api/books",bookRoute)
+var PORT = process.env.PORT||9777
 app.listen(PORT,()=>{
     console.log("The server is running")
 })

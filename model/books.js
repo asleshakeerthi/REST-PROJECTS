@@ -1,8 +1,8 @@
 var mongoose = require("mongoose")
 var bookSchema = new mongoose.Schema({
     Title : String,
-    Price : Number,
     Author : String,
-    isActive : Boolean
+    Price : Number,
+    IsActive : Boolean
 })
-var mybook = mongoose.model("book",bookSchema)
+module.exports= mongoose.model("books",bookSchema)
